@@ -32,6 +32,9 @@ def read_docx_ado(attachment_url: str, pat: str) -> str:
     """
     Download a .docx attachment from Azure DevOps and return text content.
     """
+    if not pat:
+        return "Error: Azure DevOps PAT is required."
+
     try:
         response = requests.get(attachment_url, auth=("", pat), timeout=30)
         response.raise_for_status()
