@@ -522,5 +522,9 @@ def read_docx_bytes(base64_content: str) -> str:
         return f"Error: Could not parse DOCX content: {exc}"
 
 
-if __name__ == "__main__":
+def main() -> None:
     mcp.run(transport="stdio")
+
+
+if __name__ == "__main__":
+    main()
