@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-docx-server"
+version = "0.1.0"
+description = "MCP server for reading .docx files from local disk or Azure DevOps"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp==1.27.0",
+    "python-docx==1.2.0",
+    "requests==2.31.0",
+    "msal>=1.35.1",
+    "keyring>=25.0.0",
+]
+
+[project.scripts]
+mcp-docx-server = "server:main"
+
+[tool.hatch.build.targets.wheel]
+include = ["server.py"]
